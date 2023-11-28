@@ -1,0 +1,4 @@
+Symlinking /home/grasp/ego-planner/devel/lib/libkr_trackers.so
+Symlinking /home/grasp/ego-planner/devel/lib/pkgconfig/kr_trackers.pc
+Symlinking /home/grasp/ego-planner/devel/share/kr_trackers/cmake/kr_trackersConfig-version.cmake
+Symlinking /home/grasp/ego-planner/devel/share/kr_trackers/cmake/kr_trackersConfig.cmake

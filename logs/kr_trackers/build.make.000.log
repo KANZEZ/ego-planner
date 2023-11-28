@@ -1,0 +1,46 @@
+[35m[1mScanning dependencies of target kr_trackers[0m
+[  7%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/initial_conditions.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/circle_tracker_server.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/line_tracker_distance_server.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/line_tracker_min_jerk_server.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/lissajous_adder_server.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/lissajous_generator.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/lissajous_tracker_server.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/null_tracker.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/smooth_vel_tracker_server.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/trajectory_tracker.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/poly_tracker.cpp.o[0m
+In file included from [01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/src/poly_tracker.cpp:10[m[K:
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:[m[K In constructor ‘[01m[Ktraj_opt::DiscreteStates::DiscreteStates(double, int, std::vector<Eigen::Matrix<double, -1, 1> >&)[m[K’:
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:298:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktraj_opt::DiscreteStates::dt[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+  298 |     double [01;35m[Kdt[m[K;
+      |            [01;35m[K^~[m[K
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:297:9:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kint traj_opt::DiscreteStates::N[m[K’ [[01;35m[K-Wreorder[m[K]
+  297 |     int [01;35m[KN[m[K = 20;  //num of states
+      |         [01;35m[K^[m[K
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:306:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+  306 |     [01;35m[KDiscreteStates[m[K(const double interval,
+      |     [01;35m[K^~~~~~~~~~~~~~[m[K
+[ 85%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/traj_gen.cpp.o[0m
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/src/poly_tracker.cpp:[m[K In member function ‘[01m[Kvoid PolyTracker::goal_callback()[m[K’:
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/src/poly_tracker.cpp:571:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  571 |     for(size_t j = 0; [01;35m[Kj < Num[m[K; ++j)
+      |                       [01;35m[K~~^~~~~[m[K
+In file included from [01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/src/poly_tracker.cpp:10[m[K:
+/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp: In instantiation of ‘[01m[Kvoid traj_opt::Piece<dim>::getNcoeffs(Eigen::MatrixXd&) [with int dim = 3; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K’:
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:77:5:[m[K   required from ‘[01m[Ktraj_opt::Piece<dim>::Piece(traj_opt::PolyType, Eigen::MatrixXd, float, int) [with int dim = 3; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K’
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/src/poly_tracker.cpp:436:68:[m[K   required from here
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:142:5:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KSTANDARD[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+  142 |     [01;35m[Kswitch[m[K (basis)
+      |     [01;35m[K^~~~~~[m[K
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:142:5:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KENDPOINT[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:142:5:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KCHEBYSHEV[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp: In instantiation of ‘[01m[Kvoid traj_opt::Piece<dim>::getNcoeffs(Eigen::MatrixXd&) [with int dim = 4; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K’:
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:77:5:[m[K   required from ‘[01m[Ktraj_opt::Piece<dim>::Piece(traj_opt::PolyType, Eigen::MatrixXd, float, int) [with int dim = 4; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K’
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/src/poly_tracker.cpp:459:68:[m[K   required from here
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:142:5:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KSTANDARD[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:142:5:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KENDPOINT[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+[01m[K/home/grasp/ego-planner/src/kr_mav_control/trackers/kr_trackers/utils/traj_data.hpp:142:5:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KCHEBYSHEV[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+[ 92%] [32mBuilding CXX object CMakeFiles/kr_trackers.dir/src/velocity_tracker.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/grasp/ego-planner/devel/.private/kr_trackers/lib/libkr_trackers.so[0m
+[100%] Built target kr_trackers

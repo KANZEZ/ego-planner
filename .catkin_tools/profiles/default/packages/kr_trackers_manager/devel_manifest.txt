@@ -1,0 +1,6 @@
+kr_mav_control/trackers/kr_trackers_manager
+/home/grasp/ego-planner/devel/.private/kr_trackers_manager/cmake.lock /home/grasp/ego-planner/devel/./cmake.lock
+/home/grasp/ego-planner/devel/.private/kr_trackers_manager/lib/libkr_trackers_manager.so /home/grasp/ego-planner/devel/lib/libkr_trackers_manager.so
+/home/grasp/ego-planner/devel/.private/kr_trackers_manager/lib/pkgconfig/kr_trackers_manager.pc /home/grasp/ego-planner/devel/lib/pkgconfig/kr_trackers_manager.pc
+/home/grasp/ego-planner/devel/.private/kr_trackers_manager/share/kr_trackers_manager/cmake/kr_trackers_managerConfig.cmake /home/grasp/ego-planner/devel/share/kr_trackers_manager/cmake/kr_trackers_managerConfig.cmake
+/home/grasp/ego-planner/devel/.private/kr_trackers_manager/share/kr_trackers_manager/cmake/kr_trackers_managerConfig-version.cmake /home/grasp/ego-planner/devel/share/kr_trackers_manager/cmake/kr_trackers_managerConfig-version.cmake

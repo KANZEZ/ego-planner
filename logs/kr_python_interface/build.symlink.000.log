@@ -1,0 +1,4 @@
+Symlinking /home/grasp/ego-planner/devel/lib/python3/dist-packages/kr_python_interface/__init__.py
+Symlinking /home/grasp/ego-planner/devel/lib/pkgconfig/kr_python_interface.pc
+Symlinking /home/grasp/ego-planner/devel/share/kr_python_interface/cmake/kr_python_interfaceConfig.cmake
+Symlinking /home/grasp/ego-planner/devel/share/kr_python_interface/cmake/kr_python_interfaceConfig-version.cmake

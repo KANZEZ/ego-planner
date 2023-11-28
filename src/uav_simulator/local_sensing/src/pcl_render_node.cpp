@@ -35,7 +35,7 @@
 
 //#include <cloud_banchmark/cloud_banchmarkConfig.h>
 #include "depth_render.cuh"
-#include "quadrotor_msgs/PositionCommand.h"
+//#include "quadrotor_msgs/PositionCommand.h"
 using namespace cv;
 using namespace std;
 using namespace Eigen;
@@ -148,7 +148,7 @@ void pubCameraPose(const ros::TimerEvent & event)
   //cout<<"pub cam pose"
   geometry_msgs::PoseStamped camera_pose;
   camera_pose.header = _odom.header;
-  camera_pose.header.frame_id = "/map";
+  camera_pose.header.frame_id = "simulator";
   camera_pose.pose.position.x = cam2world(0,3);
   camera_pose.pose.position.y = cam2world(1,3);
   camera_pose.pose.position.z = cam2world(2,3);
@@ -172,10 +172,12 @@ void renderSensedPoints(const ros::TimerEvent & event)
 vector<float> cloud_data;
 void rcvGlobalPointCloudCallBack(const sensor_msgs::PointCloud2 & pointcloud_map )
 {
-  if(has_global_map)
+  if(has_global_map){
+    ROS_WARN("Global Pointcloud NOOOOO received..");
     return;
+  }
 
-  ROS_WARN("Global Pointcloud received..");
+  ROS_WARN("Global Pointcloud received.. with %d size", pointcloud_map.data.size());
   //load global map
   pcl::PointCloud<pcl::PointXYZ> cloudIn;
   pcl::PointXYZ pt_in;
@@ -262,7 +264,7 @@ void render_pcl_world()
   localMap.is_dense = true;
 
   pcl::toROSMsg(localMap, local_map_pcl);
-  local_map_pcl.header.frame_id  = "/map";
+  local_map_pcl.header.frame_id  = "simulator";
   local_map_pcl.header.stamp     = last_odom_stamp;
 
   pub_pcl_wolrd.publish(local_map_pcl);

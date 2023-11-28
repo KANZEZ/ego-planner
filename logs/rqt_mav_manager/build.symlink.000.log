@@ -1,0 +1,4 @@
+Symlinking /home/grasp/ego-planner/devel/lib/python3/dist-packages/rqt_mav_manager/__init__.py
+Symlinking /home/grasp/ego-planner/devel/lib/pkgconfig/rqt_mav_manager.pc
+Symlinking /home/grasp/ego-planner/devel/share/rqt_mav_manager/cmake/rqt_mav_managerConfig-version.cmake
+Symlinking /home/grasp/ego-planner/devel/share/rqt_mav_manager/cmake/rqt_mav_managerConfig.cmake

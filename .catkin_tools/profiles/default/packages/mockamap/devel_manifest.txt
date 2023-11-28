@@ -1,0 +1,6 @@
+uav_simulator/mockamap
+/home/grasp/ego-planner/devel/.private/mockamap/cmake.lock /home/grasp/ego-planner/devel/./cmake.lock
+/home/grasp/ego-planner/devel/.private/mockamap/lib/mockamap/mockamap_node /home/grasp/ego-planner/devel/lib/mockamap/mockamap_node
+/home/grasp/ego-planner/devel/.private/mockamap/lib/pkgconfig/mockamap.pc /home/grasp/ego-planner/devel/lib/pkgconfig/mockamap.pc
+/home/grasp/ego-planner/devel/.private/mockamap/share/mockamap/cmake/mockamapConfig.cmake /home/grasp/ego-planner/devel/share/mockamap/cmake/mockamapConfig.cmake
+/home/grasp/ego-planner/devel/.private/mockamap/share/mockamap/cmake/mockamapConfig-version.cmake /home/grasp/ego-planner/devel/share/mockamap/cmake/mockamapConfig-version.cmake

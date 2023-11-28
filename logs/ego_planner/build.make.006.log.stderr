@@ -1,0 +1,13 @@
+[01m[K/home/grasp/ego-planner/src/planner/plan_manage/src/ego_replan_fsm.cpp:[m[K In member function ‘[01m[Kvoid ego_planner::EGOReplanFSM::init(ros::NodeHandle&)[m[K’:
+[01m[K/home/grasp/ego-planner/src/planner/plan_manage/src/ego_replan_fsm.cpp:61:32:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kego_planner::EGOReplanFSM::planGlobalTrajbyGivenWps()[m[K’
+   61 |       planGlobalTrajbyGivenWps([01;31m[K)[m[K;
+      |                                [01;31m[K^[m[K
+In file included from [01m[K/home/grasp/ego-planner/src/planner/plan_manage/src/ego_replan_fsm.cpp:2[m[K:
+[01m[K/home/grasp/ego-planner/src/planner/plan_manage/include/plan_manage/ego_replan_fsm.h:94:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid ego_planner::EGOReplanFSM::planGlobalTrajbyGivenWps(const PathConstPtr&)[m[K’
+   94 |     void [01;36m[KplanGlobalTrajbyGivenWps[m[K(const nav_msgs::PathConstPtr &msg);
+      |          [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/grasp/ego-planner/src/planner/plan_manage/include/plan_manage/ego_replan_fsm.h:94:10:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+make[2]: *** [CMakeFiles/ego_planner_node.dir/build.make:76: CMakeFiles/ego_planner_node.dir/src/ego_replan_fsm.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:858: CMakeFiles/ego_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

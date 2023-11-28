@@ -1,6 +1,11 @@
 
 #include <plan_manage/ego_replan_fsm.h>
 
+// kr_control_stuff
+#include <kr_tracker_msgs/Transition.h>
+#include <kr_tracker_msgs/PolyTrackerAction.h>
+#include <std_srvs/Trigger.h>
+
 namespace ego_planner
 {
 
@@ -18,6 +23,8 @@ namespace ego_planner
     nh.param("fsm/planning_horizon", planning_horizen_, -1.0);
     nh.param("fsm/planning_horizen_time", planning_horizen_time_, -1.0);
     nh.param("fsm/emergency_time_", emergency_time_, 1.0);
+
+    nh.param("srv_name", srv_name_, std::string(" "));
 
     nh.param("fsm/waypoint_num", waypoint_num_, -1);
     for (int i = 0; i < waypoint_num_; i++)
@@ -41,8 +48,11 @@ namespace ego_planner
     bspline_pub_ = nh.advertise<ego_planner::Bspline>("/planning/bspline", 10);
     data_disp_pub_ = nh.advertise<ego_planner::DataDisp>("/planning/data_display", 100);
 
+    // kr_control publiser
+    traj_goal_pub_ = nh.advertise<kr_tracker_msgs::PolyTrackerActionGoal>("tracker_cmd", 10);
+
     if (target_type_ == TARGET_TYPE::MANUAL_TARGET)
-      waypoint_sub_ = nh.subscribe("/waypoint_generator/waypoints", 1, &EGOReplanFSM::waypointCallback, this);
+      waypoint_sub_ = nh.subscribe("waypoints", 1, &EGOReplanFSM::planGlobalTrajbyGivenWps, this);
     else if (target_type_ == TARGET_TYPE::PRESET_TARGET)
     {
       ros::Duration(1.0).sleep();
@@ -54,14 +64,19 @@ namespace ego_planner
       cout << "Wrong target_type_ value! target_type_=" << target_type_ << endl;
   }
 
-  void EGOReplanFSM::planGlobalTrajbyGivenWps()
+  void EGOReplanFSM::planGlobalTrajbyGivenWps(const nav_msgs::PathConstPtr &msg)
   {
+    waypoint_num_ = msg->poses.size();
+    
     std::vector<Eigen::Vector3d> wps(waypoint_num_);
     for (int i = 0; i < waypoint_num_; i++)
     {
-      wps[i](0) = waypoints_[i][0];
-      wps[i](1) = waypoints_[i][1];
-      wps[i](2) = waypoints_[i][2];
+      // wps[i](0) = waypoints_[i][0];
+      // wps[i](1) = waypoints_[i][1];
+      // wps[i](2) = waypoints_[i][2];
+      wps[i](0) = msg->poses[i].pose.position.x;
+      wps[i](1) = msg->poses[i].pose.position.y;
+      wps[i](2) = msg->poses[i].pose.position.z;
 
       end_pt_ = wps.back();
     }
@@ -116,7 +131,8 @@ namespace ego_planner
     init_pt_ = odom_pos_;
 
     bool success = false;
-    end_pt_ << msg->poses[0].pose.position.x, msg->poses[0].pose.position.y, 1.0;
+    //end_pt_ << msg->poses[0].pose.position.x, msg->poses[0].pose.position.y, 1.0;
+    end_pt_ << msg->poses[0].pose.position.x, msg->poses[0].pose.position.y, msg->poses[0].pose.position.z;
     success = planner_manager_->planGlobalTraj(odom_pos_, odom_vel_, Eigen::Vector3d::Zero(), end_pt_, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero());
 
     visualization_->displayGoalPoint(end_pt_, Eigen::Vector4d(0, 0.5, 0.5, 1), 0.3, 0);
@@ -434,30 +450,38 @@ namespace ego_planner
       auto info = &planner_manager_->local_data_;
 
       /* publish traj */
-      ego_planner::Bspline bspline;
-      bspline.order = 3;
-      bspline.start_time = info->start_time_;
-      bspline.traj_id = info->traj_id_;
+      kr_tracker_msgs::PolyTrackerActionGoal bspline_msg;
+      bspline_msg.goal.t_start = info->start_time_;
+      bspline_msg.goal.cpts_status = 2;
+      //ego_planner::Bspline bspline;
+      //bspline.order = 3;
+      //bspline.start_time = info->start_time_;
+      //bspline.traj_id = info->traj_id_;
 
       Eigen::MatrixXd pos_pts = info->position_traj_.getControlPoint();
-      bspline.pos_pts.reserve(pos_pts.cols());
+      //bspline.pos_pts.reserve(pos_pts.cols());
       for (int i = 0; i < pos_pts.cols(); ++i)
       {
         geometry_msgs::Point pt;
         pt.x = pos_pts(0, i);
         pt.y = pos_pts(1, i);
         pt.z = pos_pts(2, i);
-        bspline.pos_pts.push_back(pt);
+        bspline_msg.goal.pos_pts.push_back(pt);
       }
 
       Eigen::VectorXd knots = info->position_traj_.getKnot();
-      bspline.knots.reserve(knots.rows());
+      //bspline.knots.reserve(knots.rows());
       for (int i = 0; i < knots.rows(); ++i)
       {
-        bspline.knots.push_back(knots(i));
+        bspline_msg.goal.knots.push_back(knots(i));
       }
 
-      bspline_pub_.publish(bspline);
+      //bspline_pub_.publish(bspline);
+      std::cout << "pub traj [reboundreplan]" << std::endl;
+      traj_goal_pub_.publish(bspline_msg);
+
+      std_srvs::Trigger trg;
+      ros::service::call(srv_name_, trg);
 
       visualization_->displayOptimalList(info->position_traj_.get_control_points(), 0);
     }
@@ -473,30 +497,40 @@ namespace ego_planner
     auto info = &planner_manager_->local_data_;
 
     /* publish traj */
-    ego_planner::Bspline bspline;
-    bspline.order = 3;
-    bspline.start_time = info->start_time_;
-    bspline.traj_id = info->traj_id_;
+    // ego_planner::Bspline bspline;
+    // bspline.order = 3;
+    // bspline.start_time = info->start_time_;
+    // bspline.traj_id = info->traj_id_;
+
+    kr_tracker_msgs::PolyTrackerActionGoal bspline_msg;
+    bspline_msg.goal.t_start = info->start_time_;
+    bspline_msg.goal.cpts_status = 2;
 
     Eigen::MatrixXd pos_pts = info->position_traj_.getControlPoint();
-    bspline.pos_pts.reserve(pos_pts.cols());
+    
+    //bspline.pos_pts.reserve(pos_pts.cols());
     for (int i = 0; i < pos_pts.cols(); ++i)
     {
       geometry_msgs::Point pt;
       pt.x = pos_pts(0, i);
       pt.y = pos_pts(1, i);
       pt.z = pos_pts(2, i);
-      bspline.pos_pts.push_back(pt);
+      bspline_msg.goal.pos_pts.push_back(pt);
     }
 
     Eigen::VectorXd knots = info->position_traj_.getKnot();
-    bspline.knots.reserve(knots.rows());
+    //bspline.knots.reserve(knots.rows());
     for (int i = 0; i < knots.rows(); ++i)
     {
-      bspline.knots.push_back(knots(i));
+      bspline_msg.goal.knots.push_back(knots(i));
     }
 
-    bspline_pub_.publish(bspline);
+    //bspline_pub_.publish(bspline);
+    std::cout << "pub traj [emergency stop]" << std::endl;
+    traj_goal_pub_.publish(bspline_msg);
+
+    std_srvs::Trigger trg;
+    ros::service::call(srv_name_, trg);
 
     return true;
   }

@@ -1,0 +1,4 @@
+Symlinking /home/grasp/ego-planner/devel/lib/libkr_serial_interface.so
+Symlinking /home/grasp/ego-planner/devel/lib/pkgconfig/kr_serial_interface.pc
+Symlinking /home/grasp/ego-planner/devel/share/kr_serial_interface/cmake/kr_serial_interfaceConfig.cmake
+Symlinking /home/grasp/ego-planner/devel/share/kr_serial_interface/cmake/kr_serial_interfaceConfig-version.cmake

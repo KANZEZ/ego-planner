@@ -13,13 +13,14 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   geometry_msgs
-  quadrotor_msgs
   plan_env
   path_searching
   bspline_opt
   traj_utils
   message_generation
   cv_bridge
+  kr_mav_msgs
+  kr_tracker_msgs
 )
 
 # Generate messages in the 'msg' folder
@@ -63,8 +64,8 @@ target_link_libraries(ego_planner_node
   )
 add_dependencies(ego_planner_node ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
-add_executable(traj_server src/traj_server.cpp)
-target_link_libraries(traj_server ${catkin_LIBRARIES})
-add_dependencies(traj_server ${${PROJECT_NAME}_EXPORTED_TARGETS})
+# add_executable(traj_server src/traj_server.cpp)
+# target_link_libraries(traj_server ${catkin_LIBRARIES})
+# add_dependencies(traj_server ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 

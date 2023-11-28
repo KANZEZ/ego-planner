@@ -1,0 +1,10 @@
+make[2]: *** No rule to make target '/home/grasp/ego-planner/src/planner/plan_manage/src/traj_server.cpp', needed by 'CMakeFiles/traj_server.dir/src/traj_server.cpp.o'.  Stop.
+make[1]: *** [CMakeFiles/Makefile2:825: CMakeFiles/traj_server.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/grasp/ego-planner/src/planner/plan_manage/src/ego_replan_fsm.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Kkr_tracker_msgs/Transition.h: No such file or directory
+    5 | #include [01;31m[K<kr_tracker_msgs/Transition.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/ego_planner_node.dir/build.make:76: CMakeFiles/ego_planner_node.dir/src/ego_replan_fsm.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:494: CMakeFiles/ego_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

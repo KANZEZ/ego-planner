@@ -1,0 +1,13 @@
+kr_mav_control/kr_mav_controllers
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/cmake.lock /home/grasp/ego-planner/devel/./cmake.lock
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/lib/libkr_mav_so3_control.so /home/grasp/ego-planner/devel/lib/libkr_mav_so3_control.so
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/lib/python3/dist-packages/kr_mav_controllers/__init__.py /home/grasp/ego-planner/devel/lib/python3/dist-packages/kr_mav_controllers/__init__.py
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/lib/python3/dist-packages/kr_mav_controllers/cfg/SO3Config.py /home/grasp/ego-planner/devel/lib/python3/dist-packages/kr_mav_controllers/cfg/SO3Config.py
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/lib/python3/dist-packages/kr_mav_controllers/cfg/__init__.py /home/grasp/ego-planner/devel/lib/python3/dist-packages/kr_mav_controllers/cfg/__init__.py
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/lib/pkgconfig/kr_mav_controllers.pc /home/grasp/ego-planner/devel/lib/pkgconfig/kr_mav_controllers.pc
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/include/kr_mav_controllers/SO3Config.h /home/grasp/ego-planner/devel/include/kr_mav_controllers/SO3Config.h
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/share/kr_mav_controllers/docs/SO3Config.dox /home/grasp/ego-planner/devel/share/kr_mav_controllers/docs/SO3Config.dox
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/share/kr_mav_controllers/docs/SO3Config-usage.dox /home/grasp/ego-planner/devel/share/kr_mav_controllers/docs/SO3Config-usage.dox
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/share/kr_mav_controllers/docs/SO3Config.wikidoc /home/grasp/ego-planner/devel/share/kr_mav_controllers/docs/SO3Config.wikidoc
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/share/kr_mav_controllers/cmake/kr_mav_controllersConfig-version.cmake /home/grasp/ego-planner/devel/share/kr_mav_controllers/cmake/kr_mav_controllersConfig-version.cmake
+/home/grasp/ego-planner/devel/.private/kr_mav_controllers/share/kr_mav_controllers/cmake/kr_mav_controllersConfig.cmake /home/grasp/ego-planner/devel/share/kr_mav_controllers/cmake/kr_mav_controllersConfig.cmake

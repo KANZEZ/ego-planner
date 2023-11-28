@@ -1,0 +1,4 @@
+Symlinking /home/grasp/ego-planner/devel/lib/libwaypoint_nav_plugin.so
+Symlinking /home/grasp/ego-planner/devel/lib/pkgconfig/waypoint_navigation_plugin.pc
+Symlinking /home/grasp/ego-planner/devel/share/waypoint_navigation_plugin/cmake/waypoint_navigation_pluginConfig-version.cmake
+Symlinking /home/grasp/ego-planner/devel/share/waypoint_navigation_plugin/cmake/waypoint_navigation_pluginConfig.cmake

@@ -1,0 +1,4 @@
+Symlinking /home/grasp/ego-planner/devel/lib/pkgconfig/kr_mesh_visualization.pc
+Symlinking /home/grasp/ego-planner/devel/lib/kr_mesh_visualization/kr_mesh_visualization
+Symlinking /home/grasp/ego-planner/devel/share/kr_mesh_visualization/cmake/kr_mesh_visualizationConfig-version.cmake
+Symlinking /home/grasp/ego-planner/devel/share/kr_mesh_visualization/cmake/kr_mesh_visualizationConfig.cmake

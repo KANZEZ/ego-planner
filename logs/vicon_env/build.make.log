@@ -1,0 +1,21 @@
+[  0%] Built target _vicon_env_generate_messages_check_deps_SemanticArray
+[  0%] Built target _vicon_env_generate_messages_check_deps_Point3d
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _vicon_env_generate_messages_check_deps_Polyhedron
+[  0%] Built target _vicon_env_generate_messages_check_deps_Point2d
+[  0%] Built target _vicon_env_generate_messages_check_deps_Cylinder
+[  0%] Built target _vicon_env_generate_messages_check_deps_Ellipse
+[  0%] Built target _vicon_env_generate_messages_check_deps_Polygon
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _vicon_env_generate_messages_check_deps_Circle
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_eus
+[ 34%] Built target vicon_env_generate_messages_nodejs
+[ 34%] Built target vicon_env_generate_messages_lisp
+[ 52%] Built target vicon_env_generate_messages_cpp
+[ 71%] Built target vicon_env_generate_messages_py
+[ 91%] Built target vicon_env_generate_messages_eus
+[ 91%] Built target vicon_env_generate_messages
+[ 95%] Built target vicon_map3d
+[100%] Built target vicon_map2d

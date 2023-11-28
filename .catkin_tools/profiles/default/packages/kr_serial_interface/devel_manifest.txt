@@ -1,0 +1,6 @@
+kr_mav_control/interfaces/kr_serial_interface
+/home/grasp/ego-planner/devel/.private/kr_serial_interface/cmake.lock /home/grasp/ego-planner/devel/./cmake.lock
+/home/grasp/ego-planner/devel/.private/kr_serial_interface/lib/libkr_serial_interface.so /home/grasp/ego-planner/devel/lib/libkr_serial_interface.so
+/home/grasp/ego-planner/devel/.private/kr_serial_interface/lib/pkgconfig/kr_serial_interface.pc /home/grasp/ego-planner/devel/lib/pkgconfig/kr_serial_interface.pc
+/home/grasp/ego-planner/devel/.private/kr_serial_interface/share/kr_serial_interface/cmake/kr_serial_interfaceConfig.cmake /home/grasp/ego-planner/devel/share/kr_serial_interface/cmake/kr_serial_interfaceConfig.cmake
+/home/grasp/ego-planner/devel/.private/kr_serial_interface/share/kr_serial_interface/cmake/kr_serial_interfaceConfig-version.cmake /home/grasp/ego-planner/devel/share/kr_serial_interface/cmake/kr_serial_interfaceConfig-version.cmake

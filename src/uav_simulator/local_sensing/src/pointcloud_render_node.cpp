@@ -79,9 +79,10 @@ vector<float> _pointRadiusSquaredDistance;
 
 void rcvGlobalPointCloudCallBack(
     const sensor_msgs::PointCloud2& pointcloud_map) {
-  if (has_global_map) return;
+  //if (has_global_map) return;
 
-  ROS_WARN("Global Pointcloud received..");
+  //ROS_WARN("Global Pointcloud received..");
+  //ROS_WARN("Global Pointcloud received.. with %d size", pointcloud_map.data.size());
 
   pcl::PointCloud<pcl::PointXYZ> cloud_input;
   pcl::fromROSMsg(pointcloud_map, cloud_input);
@@ -97,6 +98,7 @@ void rcvGlobalPointCloudCallBack(
 
 void renderSensedPoints(const ros::TimerEvent& event) {
   if (!has_global_map || !has_odom) return;
+  //ROS_WARN("I DO HAVE A GLOBAL MAP AND ODOM, START RENDERING SENSED POINTS");
 
   Eigen::Quaterniond q;
   q.x() = _odom.pose.pose.orientation.x;
@@ -115,13 +117,15 @@ void renderSensedPoints(const ros::TimerEvent& event) {
   _pointIdxRadiusSearch.clear();
   _pointRadiusSquaredDistance.clear();
 
+  //ROS_WARN("ROBO XYZ: x = %f, y = %f, z = %f", searchPoint.x, searchPoint.y, searchPoint.z);
+  //ROS_WARN("SIZE OF GLOBAL POINT CLOUD IS %d", _cloud_all_map.points.size());
   pcl::PointXYZ pt;
   if (_kdtreeLocalMap.radiusSearch(searchPoint, sensing_horizon,
                                    _pointIdxRadiusSearch,
                                    _pointRadiusSquaredDistance) > 0) {
     for (size_t i = 0; i < _pointIdxRadiusSearch.size(); ++i) {
       pt = _cloud_all_map.points[_pointIdxRadiusSearch[i]];
-
+      //ROS_WARN("pcl XYZ: x = %f, y = %f, z = %f", pt.x, pt.y, pt.z);
       // if ((fabs(pt.z - _odom.pose.pose.position.z) / (pt.x - _odom.pose.pose.position.x)) >
       //     tan(M_PI / 12.0))
       //   continue;
@@ -146,7 +150,7 @@ void renderSensedPoints(const ros::TimerEvent& event) {
   _local_map.is_dense = true;
 
   pcl::toROSMsg(_local_map, _local_map_pcd);
-  _local_map_pcd.header.frame_id = "map";
+  _local_map_pcd.header.frame_id = "simulator";
 
   pub_cloud.publish(_local_map_pcd);
 }
@@ -175,7 +179,7 @@ int main(int argc, char** argv) {
 
   // publisher depth image and color image
   pub_cloud =
-      nh.advertise<sensor_msgs::PointCloud2>("/pcl_render_node/cloud", 10);
+      nh.advertise<sensor_msgs::PointCloud2>("/quadrotor/pcl_render_node/cloud", 10);
 
   double sensing_duration = 1.0 / sensing_rate * 2.5;
 

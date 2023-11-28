@@ -1,0 +1,30 @@
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _ego_planner_generate_messages_check_deps_DataDisp
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _ego_planner_generate_messages_check_deps_Bspline
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[ 18%] Built target ego_planner_generate_messages_eus
+[ 18%] Built target geometry_msgs_generate_messages_cpp
+[ 37%] Built target ego_planner_generate_messages_py
+[ 50%] Built target ego_planner_generate_messages_nodejs
+[ 62%] Built target ego_planner_generate_messages_lisp
+[ 75%] Built target ego_planner_generate_messages_cpp
+[35m[1mScanning dependencies of target ego_planner_node[0m
+[ 75%] Built target ego_planner_generate_messages
+[ 81%] [32mBuilding CXX object CMakeFiles/ego_planner_node.dir/src/ego_replan_fsm.cpp.o[0m
+[01m[K/home/grasp/ego-planner/src/planner/plan_manage/src/ego_replan_fsm.cpp:67:8:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kvoid ego_planner::EGOReplanFSM::planGlobalTrajbyGivenWps()[m[K’
+   67 |   void [01;31m[KEGOReplanFSM[m[K::planGlobalTrajbyGivenWps()
+      |        [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/home/grasp/ego-planner/src/planner/plan_manage/src/ego_replan_fsm.cpp:2[m[K:
+[01m[K/home/grasp/ego-planner/src/planner/plan_manage/include/plan_manage/ego_replan_fsm.h:93:10:[m[K [01;36m[Knote: [m[K‘[01m[Kvoid ego_planner::EGOReplanFSM::planGlobalTrajbyGivenWps()[m[K’ previously defined here
+   93 |     void [01;36m[KplanGlobalTrajbyGivenWps[m[K(){};
+      |          [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/ego_planner_node.dir/build.make:76: CMakeFiles/ego_planner_node.dir/src/ego_replan_fsm.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:858: CMakeFiles/ego_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

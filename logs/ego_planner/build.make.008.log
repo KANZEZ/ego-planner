@@ -1,0 +1,23 @@
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _ego_planner_generate_messages_check_deps_Bspline
+[  0%] Built target _ego_planner_generate_messages_check_deps_DataDisp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[ 18%] Built target ego_planner_generate_messages_eus
+[ 31%] Built target ego_planner_generate_messages_nodejs
+[ 50%] Built target ego_planner_generate_messages_py
+[ 62%] Built target ego_planner_generate_messages_cpp
+[ 75%] Built target ego_planner_generate_messages_lisp
+[ 75%] Built target ego_planner_generate_messages
+[35m[1mScanning dependencies of target ego_planner_node[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/ego_planner_node.dir/src/ego_planner_node.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/ego_planner_node.dir/src/ego_replan_fsm.cpp.o[0m
+[ 93%] [32m[1mLinking CXX executable /home/grasp/ego-planner/devel/.private/ego_planner/lib/ego_planner/ego_planner_node[0m
+[100%] Built target ego_planner_node
